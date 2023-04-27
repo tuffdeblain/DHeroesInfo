@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 struct PlayerModel: Decodable {
     let soloCompetitiveRank: Int?
     let rankTier: Int?
