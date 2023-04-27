@@ -14,6 +14,11 @@
 		C55DF43A29FA3E8600A00322 /* DHeroesInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C55DF43829FA3E8600A00322 /* DHeroesInfo.xcdatamodeld */; };
 		C55DF43C29FA3E8700A00322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55DF43B29FA3E8700A00322 /* Assets.xcassets */; };
 		C55DF43F29FA3E8700A00322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55DF43D29FA3E8700A00322 /* LaunchScreen.storyboard */; };
+		C5CCCEB129FA3F090046E4D4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C5CCCEB029FA3F090046E4D4 /* SwiftyJSON */; };
+		C5CCCEB429FA3F1F0046E4D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C5CCCEB329FA3F1F0046E4D4 /* Alamofire */; };
+		C5CCCEB729FA3F350046E4D4 /* DotaHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */; };
+		C5CCCEB929FA3F500046E4D4 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */; };
+		C5CCCEBB29FA3F6A0046E4D4 /* RecentMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +31,9 @@
 		C55DF43B29FA3E8700A00322 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C55DF43E29FA3E8700A00322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C55DF44029FA3E8700A00322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaHero.swift; sourceTree = "<group>"; };
+		C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CCCEB129FA3F090046E4D4 /* SwiftyJSON in Frameworks */,
+				C5CCCEB429FA3F1F0046E4D4 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +71,7 @@
 				C55DF42F29FA3E8600A00322 /* AppDelegate.swift */,
 				C55DF43129FA3E8600A00322 /* SceneDelegate.swift */,
 				C55DF43329FA3E8600A00322 /* ViewController.swift */,
+				C5CCCEB529FA3F2B0046E4D4 /* Models */,
 				C55DF43529FA3E8600A00322 /* Main.storyboard */,
 				C55DF43B29FA3E8700A00322 /* Assets.xcassets */,
 				C55DF43D29FA3E8700A00322 /* LaunchScreen.storyboard */,
@@ -68,6 +79,16 @@
 				C55DF43829FA3E8600A00322 /* DHeroesInfo.xcdatamodeld */,
 			);
 			path = DHeroesInfo;
+			sourceTree = "<group>";
+		};
+		C5CCCEB529FA3F2B0046E4D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */,
+				C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */,
+				C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +107,10 @@
 			dependencies = (
 			);
 			name = DHeroesInfo;
+			packageProductDependencies = (
+				C5CCCEB029FA3F090046E4D4 /* SwiftyJSON */,
+				C5CCCEB329FA3F1F0046E4D4 /* Alamofire */,
+			);
 			productName = DHeroesInfo;
 			productReference = C55DF42C29FA3E8600A00322 /* DHeroesInfo.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +139,10 @@
 				Base,
 			);
 			mainGroup = C55DF42329FA3E8600A00322;
+			packageReferences = (
+				C5CCCEAF29FA3F090046E4D4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				C5CCCEB229FA3F1F0046E4D4 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = C55DF42D29FA3E8600A00322 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -141,8 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5CCCEB929FA3F500046E4D4 /* PlayerModel.swift in Sources */,
 				C55DF43429FA3E8600A00322 /* ViewController.swift in Sources */,
+				C5CCCEBB29FA3F6A0046E4D4 /* RecentMatch.swift in Sources */,
 				C55DF43029FA3E8600A00322 /* AppDelegate.swift in Sources */,
+				C5CCCEB729FA3F350046E4D4 /* DotaHero.swift in Sources */,
 				C55DF43A29FA3E8600A00322 /* DHeroesInfo.xcdatamodeld in Sources */,
 				C55DF43229FA3E8600A00322 /* SceneDelegate.swift in Sources */,
 			);
@@ -299,6 +331,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -327,6 +360,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -362,6 +396,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C5CCCEAF29FA3F090046E4D4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C5CCCEB229FA3F1F0046E4D4 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C5CCCEB029FA3F090046E4D4 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5CCCEAF29FA3F090046E4D4 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		C5CCCEB329FA3F1F0046E4D4 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C5CCCEB229FA3F1F0046E4D4 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C55DF43829FA3E8600A00322 /* DHeroesInfo.xcdatamodeld */ = {
