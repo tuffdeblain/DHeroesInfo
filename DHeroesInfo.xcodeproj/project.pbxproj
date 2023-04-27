@@ -19,6 +19,9 @@
 		C5CCCEB729FA3F350046E4D4 /* DotaHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */; };
 		C5CCCEB929FA3F500046E4D4 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */; };
 		C5CCCEBB29FA3F6A0046E4D4 /* RecentMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */; };
+		C5CCCEBE29FA3F9F0046E4D4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEBD29FA3F9F0046E4D4 /* NetworkManager.swift */; };
+		C5CCCEC029FA3FB60046E4D4 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEBF29FA3FB60046E4D4 /* ImageManager.swift */; };
+		C5CCCEC329FA3FD40046E4D4 /* URLS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEC229FA3FD40046E4D4 /* URLS.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaHero.swift; sourceTree = "<group>"; };
 		C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatch.swift; sourceTree = "<group>"; };
+		C5CCCEBD29FA3F9F0046E4D4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		C5CCCEBF29FA3FB60046E4D4 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		C5CCCEC229FA3FD40046E4D4 /* URLS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLS.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,9 +77,10 @@
 				C55DF42F29FA3E8600A00322 /* AppDelegate.swift */,
 				C55DF43129FA3E8600A00322 /* SceneDelegate.swift */,
 				C55DF43329FA3E8600A00322 /* ViewController.swift */,
+				C5CCCEBC29FA3F960046E4D4 /* Managers */,
 				C5CCCEB529FA3F2B0046E4D4 /* Models */,
 				C55DF43529FA3E8600A00322 /* Main.storyboard */,
-				C55DF43B29FA3E8700A00322 /* Assets.xcassets */,
+				C5CCCEC129FA3FC60046E4D4 /* Resources */,
 				C55DF43D29FA3E8700A00322 /* LaunchScreen.storyboard */,
 				C55DF44029FA3E8700A00322 /* Info.plist */,
 				C55DF43829FA3E8600A00322 /* DHeroesInfo.xcdatamodeld */,
@@ -89,6 +96,24 @@
 				C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C5CCCEBC29FA3F960046E4D4 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C5CCCEBD29FA3F9F0046E4D4 /* NetworkManager.swift */,
+				C5CCCEBF29FA3FB60046E4D4 /* ImageManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C5CCCEC129FA3FC60046E4D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C55DF43B29FA3E8700A00322 /* Assets.xcassets */,
+				C5CCCEC229FA3FD40046E4D4 /* URLS.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,7 +198,10 @@
 				C5CCCEB929FA3F500046E4D4 /* PlayerModel.swift in Sources */,
 				C55DF43429FA3E8600A00322 /* ViewController.swift in Sources */,
 				C5CCCEBB29FA3F6A0046E4D4 /* RecentMatch.swift in Sources */,
+				C5CCCEC029FA3FB60046E4D4 /* ImageManager.swift in Sources */,
 				C55DF43029FA3E8600A00322 /* AppDelegate.swift in Sources */,
+				C5CCCEC329FA3FD40046E4D4 /* URLS.swift in Sources */,
+				C5CCCEBE29FA3F9F0046E4D4 /* NetworkManager.swift in Sources */,
 				C5CCCEB729FA3F350046E4D4 /* DotaHero.swift in Sources */,
 				C55DF43A29FA3E8600A00322 /* DHeroesInfo.xcdatamodeld in Sources */,
 				C55DF43229FA3E8600A00322 /* SceneDelegate.swift in Sources */,
