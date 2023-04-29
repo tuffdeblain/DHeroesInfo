@@ -15,6 +15,7 @@
 		C55DF43C29FA3E8700A00322 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55DF43B29FA3E8700A00322 /* Assets.xcassets */; };
 		C55DF43F29FA3E8700A00322 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55DF43D29FA3E8700A00322 /* LaunchScreen.storyboard */; };
 		C5B97F0929FCEA5B0008760D /* RecentMatchViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B97F0829FCEA5A0008760D /* RecentMatchViewCell.swift */; };
+		C5B97F0B29FCEF530008760D /* TappableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B97F0A29FCEF530008760D /* TappableLabel.swift */; };
 		C5CCCEB129FA3F090046E4D4 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = C5CCCEB029FA3F090046E4D4 /* SwiftyJSON */; };
 		C5CCCEB429FA3F1F0046E4D4 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = C5CCCEB329FA3F1F0046E4D4 /* Alamofire */; };
 		C5CCCEB729FA3F350046E4D4 /* DotaHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */; };
@@ -40,6 +41,7 @@
 		C55DF43E29FA3E8700A00322 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C55DF44029FA3E8700A00322 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5B97F0829FCEA5A0008760D /* RecentMatchViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchViewCell.swift; sourceTree = "<group>"; };
+		C5B97F0A29FCEF530008760D /* TappableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TappableLabel.swift; sourceTree = "<group>"; };
 		C5CCCEB629FA3F350046E4D4 /* DotaHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotaHero.swift; sourceTree = "<group>"; };
 		C5CCCEB829FA3F500046E4D4 /* PlayerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		C5CCCEBA29FA3F6A0046E4D4 /* RecentMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatch.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				C5CCCEC529FA413F0046E4D4 /* DotaHeroesTableViewCell.swift */,
 				C5B97F0829FCEA5A0008760D /* RecentMatchViewCell.swift */,
+				C5B97F0A29FCEF530008760D /* TappableLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				C5CCCEC029FA3FB60046E4D4 /* ImageManager.swift in Sources */,
 				C5E4505829FC215700DD4719 /* ProfileViewController.swift in Sources */,
 				C55DF43029FA3E8600A00322 /* AppDelegate.swift in Sources */,
+				C5B97F0B29FCEF530008760D /* TappableLabel.swift in Sources */,
 				C5CCCEC929FA43880046E4D4 /* HeroDetailsViewController.swift in Sources */,
 				C5CCCEC629FA413F0046E4D4 /* DotaHeroesTableViewCell.swift in Sources */,
 				C5CCCEC329FA3FD40046E4D4 /* URLS.swift in Sources */,
