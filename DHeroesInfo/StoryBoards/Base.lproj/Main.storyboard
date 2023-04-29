@@ -323,6 +323,8 @@
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="doI-mz-YSS">
                                 <rect key="frame" x="16" y="181" width="361" height="34"/>
+                                <color key="backgroundColor" red="0.85490196080000003" green="0.87450980389999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.85490196080000003" green="0.87450980389999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -333,7 +335,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot0-1r-Jat">
-                                <rect key="frame" x="101.33333333333333" y="633.66666666666663" width="190.33333333333337" height="46.333333333333371"/>
+                                <rect key="frame" x="101.33333333333333" y="702.66666666666663" width="190.33333333333337" height="46.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="ot0-1r-Jat" secondAttribute="height" multiplier="127:31" id="MyT-Dn-6IJ"/>
                                 </constraints>
@@ -346,23 +348,41 @@
                                     <action selector="nextViewButton" destination="EK4-kc-DeS" eventType="touchUpInside" id="VyD-tR-zi9"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" estimatedSectionHeaderHeight="-1" sectionFooterHeight="28" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Rlv-O9-Brv">
+                                <rect key="frame" x="16" y="223.00000000000003" width="361" height="459.66666666666674"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="steamIDCell" id="6JB-Jb-Cnd">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6JB-Jb-Cnd" id="gSh-lV-RYI">
+                                            <rect key="frame" x="0.0" y="0.0" width="361" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="rG9-ms-nhH"/>
                         <color key="backgroundColor" red="0.105693616" green="0.1579574943" blue="0.21872821449999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ot0-1r-Jat" firstAttribute="top" secondItem="Rlv-O9-Brv" secondAttribute="bottom" constant="20" id="6I5-Mr-2pe"/>
+                            <constraint firstItem="Rlv-O9-Brv" firstAttribute="leading" secondItem="rG9-ms-nhH" secondAttribute="leading" constant="16" id="832-Ax-mA5"/>
                             <constraint firstItem="rG9-ms-nhH" firstAttribute="trailing" secondItem="doI-mz-YSS" secondAttribute="trailing" constant="16" id="9jN-86-Mj6"/>
                             <constraint firstItem="in3-Xa-kt1" firstAttribute="top" secondItem="rG9-ms-nhH" secondAttribute="top" constant="41" id="BK9-Iw-nmz"/>
                             <constraint firstItem="ot0-1r-Jat" firstAttribute="centerX" secondItem="rG9-ms-nhH" secondAttribute="centerX" id="JmZ-0H-e5M"/>
-                            <constraint firstItem="rG9-ms-nhH" firstAttribute="bottom" secondItem="ot0-1r-Jat" secondAttribute="bottom" constant="89" id="S6v-dT-9ll"/>
+                            <constraint firstItem="rG9-ms-nhH" firstAttribute="bottom" secondItem="ot0-1r-Jat" secondAttribute="bottom" constant="20" id="S6v-dT-9ll"/>
                             <constraint firstItem="doI-mz-YSS" firstAttribute="top" secondItem="in3-Xa-kt1" secondAttribute="bottom" constant="16" id="cUe-yN-gy0"/>
+                            <constraint firstItem="rG9-ms-nhH" firstAttribute="trailing" secondItem="Rlv-O9-Brv" secondAttribute="trailing" constant="16" id="enf-Fz-Krl"/>
                             <constraint firstItem="in3-Xa-kt1" firstAttribute="leading" secondItem="rG9-ms-nhH" secondAttribute="leading" constant="16" id="gX6-Hk-5xS"/>
                             <constraint firstItem="ot0-1r-Jat" firstAttribute="width" secondItem="HNp-R6-x5m" secondAttribute="height" multiplier="127:568" id="kf3-s1-gc6"/>
+                            <constraint firstItem="Rlv-O9-Brv" firstAttribute="top" secondItem="doI-mz-YSS" secondAttribute="bottom" constant="8" symbolic="YES" id="mtr-R4-xV4"/>
                             <constraint firstItem="doI-mz-YSS" firstAttribute="leading" secondItem="rG9-ms-nhH" secondAttribute="leading" constant="16" id="xKZ-hg-fal"/>
                             <constraint firstItem="rG9-ms-nhH" firstAttribute="trailing" secondItem="in3-Xa-kt1" secondAttribute="trailing" constant="16" id="yZC-Sc-Rp4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Login" id="8NX-dv-fUx"/>
                     <connections>
+                        <outlet property="idHistoryTableView" destination="Rlv-O9-Brv" id="bha-ri-erb"/>
                         <outlet property="steamIDTextField" destination="doI-mz-YSS" id="XPF-Kd-sM7"/>
                         <segue destination="YqF-sg-aHG" kind="show" identifier="profileSegue" id="l7g-PF-DOd"/>
                     </connections>
