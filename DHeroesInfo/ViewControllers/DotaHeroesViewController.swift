@@ -1,12 +1,9 @@
 //
-//  ViewController.swift
+//  DotaHeroesViewController.swift
 //  DHeroesInfo
 //
 //  Created by Сергей Кудинов on 27.04.2023.
 //
-
-
-
 
 import Alamofire
 import SwiftyJSON
@@ -15,26 +12,18 @@ import UIKit
 class DotaHeroesViewController: UITableViewController {
     private var loadingIndicator: UIActivityIndicatorView!
     private var visibleCellIndices: Set<Int> = []
-    private var imageData: UIImage?
-    private var dotaHeroes: [DotaHero?] =  []
-    private var jsonArray: [JSON]? = []
-    private var index = 0
-    private var selectedCellIndex = 0
+    private var dotaHeroes: [DotaHero?] = []
     
+    private var selectedCellIndex = 0
+
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadingIndicator = UIActivityIndicatorView(style: .large)
-        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(loadingIndicator)
-        NSLayoutConstraint.activate([
-            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
-        loadingIndicator.startAnimating()
+        setupLoadingIndicator()
         tableView.isHidden = true
 
-        getData()
+        fetchHeroesData()
     }
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -42,7 +31,8 @@ class DotaHeroesViewController: UITableViewController {
         visibleCellIndices = Set(visibleCells)
         tableView.reloadData()
     }
-    // MARK: - Table view data source
+
+    // MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
@@ -53,29 +43,30 @@ class DotaHeroesViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier") as! DotaHeroesTableViewCell
-        index = indexPath.item
-        if (dotaHeroes[index]?.name != nil){
-            // cell.textLabel?.text = dotaHeroes[index]?.localized_name
-            //cell.textLabel?.textColor = UIColor.white
-            cell.heroName.text = dotaHeroes[index]?.localized_name
-            cell.backgroundColor = .gray
-           
-            cell.getImage(imageURL: URLS.opedDotaURL.rawValue + (self.dotaHeroes[index]?.icon ?? ""))
-            
-        }
+        configureCell(cell, at: indexPath)
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectedCellIndex = indexPath.item
+        selectedCellIndex = indexPath.row
         performSegue(withIdentifier: "detailsSegue", sender: nil)
     }
-    
-
 }
 
+
 extension DotaHeroesViewController {
-    private func getData() {
+    private func setupLoadingIndicator() {
+        loadingIndicator = UIActivityIndicatorView(style: .large)
+        loadingIndicator.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(loadingIndicator)
+        NSLayoutConstraint.activate([
+            loadingIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loadingIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+        ])
+        loadingIndicator.startAnimating()
+    }
+    
+    private func fetchHeroesData() {
         NetworkManager.shared.getDataForHeroes { heroes in
             DispatchQueue.main.async {
                 self.dotaHeroes = heroes
@@ -85,15 +76,18 @@ extension DotaHeroesViewController {
             }
         }
     }
-
     
-    private func getImage(url: String, index: Int){
-        NetworkManager.shared.getImageForHeroe(url: url, index: index) { data in
-            self.dotaHeroes[index]?.iconData = data
+    private func configureCell(_ cell: DotaHeroesTableViewCell, at indexPath: IndexPath) {
+        let index = indexPath.row
+        if let hero = dotaHeroes[index] {
+            cell.heroName.text = hero.localized_name
+            cell.backgroundColor = .gray
+           
+            if let icon = hero.icon {
+                cell.loadImage(from: URLS.opedDotaURL.rawValue + icon)
+            }
         }
     }
-    
-
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let heroDetailsVC = segue.destination as? HeroDetailsViewController else { return }

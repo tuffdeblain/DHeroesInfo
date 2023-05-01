@@ -1,10 +1,18 @@
+//
+//  DotaHeroesTableViewCell.swift
+//  DHeroesInfo
+//
+//  Created by Сергей Кудинов on 27.04.2023.
+//
+
 import UIKit
 
 class DotaHeroesTableViewCell: UITableViewCell {
     
+
     private static let imageCache = NSCache<NSString, UIImage>()
     
-    let heroImage: UIImageView = {
+    private let heroImage: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -16,14 +24,37 @@ class DotaHeroesTableViewCell: UITableViewCell {
         return label
     }()
     
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        configureContentView()
+        configureHeroImage()
+        configureHeroName()
+        setupConstraints()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+}
+
+
+extension DotaHeroesTableViewCell {
+    private func configureContentView() {
         contentView.backgroundColor = UIColor(red: 0.11, green: 0.16, blue: 0.22, alpha: 1.0)
+    }
+    
+    private func configureHeroImage() {
         contentView.addSubview(heroImage)
+    }
+    
+    private func configureHeroName() {
         contentView.addSubview(heroName)
-        
         heroName.textColor = .white
+    }
+    
+    private func setupConstraints() {
         NSLayoutConstraint.activate([
             heroImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
             heroImage.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
@@ -37,13 +68,7 @@ class DotaHeroesTableViewCell: UITableViewCell {
         ])
     }
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-}
-
-extension DotaHeroesTableViewCell {
-    func getImage(imageURL: String) {
+    func loadImage(from imageURL: String) {
         if let cachedImage = Self.imageCache.object(forKey: imageURL as NSString) {
             self.heroImage.image = cachedImage
             return

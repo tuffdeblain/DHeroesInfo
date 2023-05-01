@@ -10,7 +10,6 @@ import UIKit
 class HeroDetailsViewController: UIViewController {
 
     @IBOutlet weak var heroImage: UIImageView!
-    
     @IBOutlet weak var strLabel: UILabel!
     @IBOutlet weak var agiLabel: UILabel!
     @IBOutlet weak var intLabel: UILabel!

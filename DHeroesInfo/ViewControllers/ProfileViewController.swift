@@ -25,17 +25,14 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
-        print(URLS.playerInfoURL.rawValue + steamID!)
-        
-        recentMatchesTableView.register(RecentMatchViewCell.self, forCellReuseIdentifier: "recentMatchCell")
-
     }
 
 }
 
 extension ProfileViewController {
-    
     private func setUI() {
+        recentMatchesTableView.register(RecentMatchViewCell.self, forCellReuseIdentifier: "recentMatchCell")
+
         getData(steamID: steamID!)
         
         avatarImage.layer.borderWidth = 2
@@ -94,10 +91,10 @@ extension ProfileViewController {
 }
 
 extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         CGFloat(70)
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recentMatches.count
     }
@@ -106,11 +103,8 @@ extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "recentMatchCell", for: indexPath) as? RecentMatchViewCell else {
             fatalError("Unable to dequeue RecentMatchViewCell")
         }
-        
         let match = recentMatches[indexPath.item]
         cell.configure(with: match)
         return cell
     }
-    
-    
 }

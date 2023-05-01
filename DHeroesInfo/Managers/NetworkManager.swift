@@ -20,16 +20,13 @@ class NetworkManager {
         var dotaHeroes: [DotaHero] = []
         AF.request(URLS.openDotaHeroURL.rawValue, method: .get)
             .validate()
-        
             .responseJSON { dataResponse in
                 switch dataResponse.result {
                 case .success(let value):
                     let json = JSON(value)
                     
                     for count in 1..<(json.count + 22) {
-                        
                         let heroJSON = json["\(count)"]
-                        
                         if (heroJSON["localized_name"].string != nil) {
                             let hero = DotaHero(id: heroJSON["id"].int,
                                                 name: heroJSON["name"].string,
@@ -54,13 +51,11 @@ class NetworkManager {
                                                 move_speed: heroJSON["move_speed"].int)
                             dotaHeroes.append(hero)
                         }
-                        
                     }
                     completion(dotaHeroes)
                 case .failure(let error):
                     print(error)
                 }
-                
             }
     }
     
@@ -72,7 +67,6 @@ class NetworkManager {
                     DispatchQueue.main.async {
                         completion(data)
                     }
-                    
                 }
             }
     }
@@ -83,7 +77,6 @@ class NetworkManager {
        // var player: PlayerModel
         AF.request(url, method: .get)
             .validate()
-        
             .responseJSON { player in
                 switch player.result {
                 case .success(let value):
@@ -107,7 +100,6 @@ class NetworkManager {
                                                           isContributor: json["profile"]["is_contributor"].bool),
                                          estimateMMR: MmrEstimate(estimateMMR: json["mmr_estimate"]["estimate"].int))
                     
-                        
                     completion(player)
                 case .failure(let error):
                     print(error)
@@ -136,7 +128,6 @@ class NetworkManager {
                 case .success(let value):
                     let json = JSON(value)
                     let winRate = WinRate(win: json["win"].int, lose: json["lose"].int)
-                    
                     completion(winRate)
                 case .failure(_):
                     print("error")
@@ -150,7 +141,6 @@ class NetworkManager {
         var recentMatches: [RecentMatch] = []
         AF.request(url, method: .get)
             .validate()
-        
             .responseJSON { recentMatch in
                 switch recentMatch.result {
                 case .success(let value):
